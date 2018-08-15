@@ -1,0 +1,10 @@
+These are the commands need to create a 'secret' config folder for easy storage of dotfiles with no symbolic links or added software
+
+1: git init --bare $HOME/.cfg
+2: alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+3: config config --local status.showUntrackedFiles no
+3: echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.bashrc
+
+Now use config in place of git for issuing commands to this directory
+
+information for creating the repo was found here: https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
